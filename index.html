@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mohammed Khalid Jameel — Financial Accountant. Digital professional profile.">
+<title>Mohammed Khalid Jameel</title>
+<style>
+  :root{
+    --paper:#F3F1EA;
+    --paper-raised:#FFFFFF;
+    --ink:#16212B;
+    --ink-soft:#57626C;
+    --ink-faint:#8D949B;
+    --line:#DAD5C6;
+    --line-strong:#C7C0AC;
+    --accent:#A9782E;
+    --accent-strong:#7E5A20;
+    --accent-soft:rgba(169,120,46,0.12);
+    --accent-soft-2:rgba(169,120,46,0.22);
+    --shadow: 0 1px 2px rgba(22,33,43,0.06), 0 8px 24px rgba(22,33,43,0.06);
+    --focus: #2F6FED;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#12161B;
+      --paper-raised:#181D23;
+      --ink:#ECE7DA;
+      --ink-soft:#B4AE9F;
+      --ink-faint:#7C7768;
+      --line:#333B41;
+      --line-strong:#454E55;
+      --accent:#D6A54F;
+      --accent-strong:#E9BE72;
+      --accent-soft:rgba(214,165,79,0.14);
+      --accent-soft-2:rgba(214,165,79,0.26);
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#12161B;
+    --paper-raised:#181D23;
+    --ink:#ECE7DA;
+    --ink-soft:#B4AE9F;
+    --ink-faint:#7C7768;
+    --line:#333B41;
+    --line-strong:#454E55;
+    --accent:#D6A54F;
+    --accent-strong:#E9BE72;
+    --accent-soft:rgba(214,165,79,0.14);
+    --accent-soft-2:rgba(214,165,79,0.26);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    margin:0;
+    font-family:"Work Sans","Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  body[data-active="en"] .lang-ar{display:none !important;}
+  body[data-active="ar"] .lang-en{display:none !important;}
+
+  .lang-ar{ font-family:"Cairo","Tahoma",sans-serif; }
+  .lang-ar .display{ font-family:"Cairo","Tahoma",sans-serif; }
+  .lang-en .display{ font-family:"Fraunces","Georgia",serif; }
+  .num{ font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  a{ color:inherit; }
+
+  .switcher{
+    position:fixed;
+    top:calc(16px + env(safe-area-inset-top,0px));
+    inset-inline-end:16px;
+    z-index:40;
+    display:flex;
+    gap:2px;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:3px;
+    box-shadow:var(--shadow);
+  }
+  .switcher button{
+    appearance:none;
+    border:none;
+    background:transparent;
+    color:var(--ink-soft);
+    font:600 12.5px/1 "JetBrains Mono", monospace;
+    letter-spacing:0.04em;
+    padding:8px 13px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .18s ease, color .18s ease;
+  }
+  .switcher button[aria-pressed="true"]{
+    background:var(--accent);
+    color:#fff;
+  }
+  .switcher button:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+    padding:76px 20px 48px;
+  }
+  @media (min-width:640px){
+    .sheet{ padding-inline:32px; }
+  }
+
+  .letterhead{
+    padding-bottom:22px;
+    border-bottom:3px double var(--line-strong);
+    margin-bottom:28px;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font:700 11px/1 "JetBrains Mono", monospace;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--accent);
+    display:inline-block;
+  }
+  h1.name{
+    font-size:clamp(32px,7vw,46px);
+    line-height:1.08;
+    font-weight:600;
+    margin:0 0 6px;
+    text-wrap:balance;
+  }
+  .lang-en h1.name{ font-weight:600; }
+  .lang-ar h1.name{ font-weight:800; }
+  .role{
+    font-size:18px;
+    font-weight:600;
+    color:var(--accent-strong);
+    margin:0 0 16px;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 10px;
+    margin:0 0 10px;
+    padding:0;
+    list-style:none;
+  }
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:6px 11px;
+  }
+  .chip svg{ width:15px;height:15px;flex:none;color:var(--accent); }
+  .chip a{ text-decoration:none; }
+  .chip a:hover{ color:var(--accent-strong); }
+  .meta-line{
+    font-size:13px;
+    color:var(--ink-faint);
+    margin:4px 0 0;
+  }
+  .meta-line b{ color:var(--ink-soft); font-weight:600; }
+
+  section{ margin-bottom:34px; }
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin:0 0 16px;
+  }
+  .sec-head h2{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+    margin:0;
+    white-space:nowrap;
+  }
+  .sec-head .rule{
+    height:1px;
+    background:var(--line);
+    flex:1;
+  }
+
+  p.summary{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    margin:0;
+    text-align:justify;
+    text-align-last:start;
+  }
+
+  .job{
+    padding:16px 18px;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    margin-bottom:14px;
+  }
+  .job:last-child{ margin-bottom:0; }
+  .job-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:2px;
+  }
+  .job-role{ font-size:16px; font-weight:700; }
+  .job-org{ color:var(--accent-strong); font-weight:600; }
+  .job-period{
+    font-size:12.5px;
+    color:var(--ink-faint);
+    white-space:nowrap;
+  }
+  .job ul{
+    margin:12px 0 0;
+    padding:0;
+    list-style:none;
+  }
+  .job li{
+    position:relative;
+    padding-inline-start:20px;
+    margin-bottom:7px;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+  .job li:last-child{ margin-bottom:0; }
+  .job li::before{
+    content:"";
+    position:absolute;
+    inset-inline-start:2px;
+    top:8px;
+    width:6px;height:6px;
+    border-radius:1.5px;
+    background:var(--accent);
+    opacity:0.75;
+    transform:rotate(45deg);
+  }
+
+  .edu-item{
+    padding:16px 18px;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  .edu-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .edu-degree{ font-size:16px; font-weight:700; }
+  .edu-org{ color:var(--accent-strong); font-weight:600; }
+  .edu-period{ font-size:12.5px; color:var(--ink-faint); white-space:nowrap; }
+  .edu-note{
+    margin:10px 0 0;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:0;
+    margin:0;
+    list-style:none;
+  }
+  .tag{
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink-soft);
+    background:var(--accent-soft);
+    border:1px solid var(--accent-soft-2);
+    border-radius:7px;
+    padding:6px 11px;
+  }
+
+  .lang-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  @media (max-width:480px){ .lang-list{ grid-template-columns:1fr; } }
+  .lang-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:9px;
+  }
+  .lang-name{ font-size:14.5px; font-weight:700; }
+  .lang-level{ font-size:12.5px; color:var(--ink-faint); }
+
+  .cert{
+    display:flex;
+    gap:13px;
+    align-items:flex-start;
+    padding:14px 16px;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    margin-bottom:10px;
+  }
+  .cert:last-child{ margin-bottom:0; }
+  .cert-badge{
+    flex:none;
+    width:34px;height:34px;
+    border-radius:50%;
+    border:1.5px dashed var(--accent-soft-2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--accent);
+  }
+  .cert-badge svg{ width:17px;height:17px; }
+  .cert-name{ font-size:14.5px; font-weight:700; margin:0 0 2px; }
+  .cert-org{ font-size:13px; color:var(--ink-soft); margin:0; }
+  .cert-date{ font-size:12px; color:var(--ink-faint); margin:4px 0 0; }
+  .pill-progress{
+    display:inline-block;
+    font:600 10.5px/1 "JetBrains Mono",monospace;
+    letter-spacing:0.03em;
+    color:var(--accent-strong);
+    background:var(--accent-soft);
+    border:1px solid var(--accent-soft-2);
+    border-radius:999px;
+    padding:3px 8px;
+    margin-inline-start:8px;
+  }
+
+  .share{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px;
+    display:flex;
+    gap:24px;
+    align-items:center;
+    flex-wrap:wrap;
+    box-shadow:var(--shadow);
+  }
+  .qr-box{
+    flex:none;
+    width:132px;height:132px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .qr-box img{ width:100%;height:100%;display:block; }
+  .qr-placeholder{
+    color:var(--ink-faint);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    font-size:10.5px;
+  }
+  .qr-placeholder svg{ width:26px;height:26px; }
+  .share-text{ flex:1; min-width:200px; }
+  .share-title{ font-size:15.5px; font-weight:700; margin:0 0 4px; }
+  .share-desc{ font-size:13.5px; color:var(--ink-soft); margin:0 0 14px; line-height:1.55; }
+  .share-url{
+    display:inline-block;
+    font:500 12.5px/1 "JetBrains Mono",monospace;
+    color:var(--accent-strong);
+    background:var(--accent-soft);
+    border:1px solid var(--accent-soft-2);
+    border-radius:7px;
+    padding:7px 10px;
+    margin-bottom:14px;
+    word-break:break-all;
+  }
+  .dl-row{ display:flex; gap:10px; flex-wrap:wrap; }
+  .dl-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font:600 13.5px/1 "Work Sans",sans-serif;
+    color:#fff;
+    background:var(--ink);
+    border:none;
+    border-radius:8px;
+    padding:11px 16px;
+    cursor:pointer;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .lang-ar .dl-btn{ font-family:"Cairo",sans-serif; }
+  .dl-btn svg{ width:16px;height:16px; }
+  .dl-btn:hover{ background:var(--accent-strong); }
+  .dl-btn:active{ transform:translateY(1px); }
+  .dl-btn:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+  .dl-status{
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-top:8px;
+    min-height:14px;
+  }
+
+  footer.page-footer{
+    text-align:center;
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    color:var(--ink-faint);
+  }
+
+  @media print{
+    .switcher, .share{ display:none !important; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+
+
+</head>
+<body>
+<div class="switcher" role="group" aria-label="Language / اللغة">
+  <button type="button" id="btn-ar" aria-pressed="true">AR</button>
+  <button type="button" id="btn-en" aria-pressed="false">EN</button>
+</div>
+
+<div class="sheet">
+
+  <!-- ============ ARABIC ============ -->
+  <div class="lang-ar" lang="ar" dir="rtl">
+    <header class="letterhead">
+      <p class="eyebrow">الملف الرقمي المهني</p>
+      <h1 class="name display">محمد خالد جميل</h1>
+      <p class="role">محاسب مالي</p>
+      <ul class="contact-row">
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="num">07517562483</span>
+        </li>
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          <span class="num">goldr434@gmail.com</span>
+        </li>
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>كركوك، العراق</span>
+        </li>
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/in/muhammed-khalid-962325396" target="_blank" rel="noopener">LinkedIn</a>
+        </li>
+      </ul>
+      <p class="meta-line"><b>الجنسية:</b> عراقي &nbsp;·&nbsp; <b>رخصة القيادة:</b> خاصة</p>
+    </header>
+
+    <section>
+      <div class="sec-head"><h2>نبذة مهنية</h2><div class="rule"></div></div>
+      <p class="summary">محاسب مالي يمتلك خبرة تمتد نحو ست سنوات في التدقيق المالي والرقابة الداخلية وإدارة العمليات المحاسبية بمختلف تفاصيلها. عُرف خلال مسيرته المهنية بتحمّل المسؤولية كاملة تجاه ما يُوكل إليه من مهام، حتى إنه تولّى إدارة قسم الحسابات بمفرده في إحدى المحطات المهنية، مع حرص دائم على تطوير الإجراءات والنماذج والمستندات لتكون أسرع أداءً وأكثر كفاءة من الأساليب المعتمدة سابقاً. له خبرة في بناء الأنظمة المحاسبية من الصفر لمشاريع ناشئة، وفي تأهيل الكوادر المحاسبية والتقنية الجديدة وتوجيهها. ويؤمن بأن قيمة العمل تُقاس ببقائه فعالاً ومُحكم الإدارة حتى بعد انتهاء دوره فيه، لا بمجرد إنجاز المهام مقابل الأجر.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>الخبرة العملية</h2><div class="rule"></div></div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-role">محاسب مالي <span class="job-org">— شركة كات</span></span>
+          <span class="job-period">أيلول 2022 – حتى الآن</span>
+        </div>
+        <ul>
+          <li>أدار بمفرده قسم الحسابات بالكامل لمدة تراوحت بين 4 و5 أشهر، وغطّى جميع المسؤوليات منفرداً بنسبة أخطاء ضئيلة جداً.</li>
+          <li>درّب وأهّل محاسباً مبتدئاً حديث التعيين وموظف تقنية معلومات (IT)، وما زالا يعتمدان على توجيهه ودعمه المستمر.</li>
+          <li>تعاون مباشرة مع الإدارة العليا لبناء الأساس المحاسبي من الصفر لمشروع جديد (مشروع VGO) باستخدام برنامج الأمين لإدارة المستودعات، ووجّه فريق المحاسبين حتى اكتمال التطبيق.</li>
+          <li>أدار حسابات المصنع بالتزامن مع مسؤولياته في المشاريع الجديدة.</li>
+          <li>بنى الأساس المحاسبي من الصفر لمشروع جديد آخر (مشروع الصفوة الخاصة)، وتولى تدريب وتوجيه موظف حسابات حديث التعيين.</li>
+          <li>أعاد تصميم النماذج والسجلات الرسمية وقوالب التقارير الداخلية، واستبدل الطرق القديمة بإجراءات أسرع وأكثر كفاءة.</li>
+          <li>طوّر أنظمة وإجراءات رقابة داخلية لتعزيز الدقة المالية وحماية أصول الشركة.</li>
+          <li>أشرف على إعداد المستندات المالية والتأكد من مطابقتها لمتطلبات عمليات التدقيق الرقابي.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-role">مدقق مشتريات <span class="job-org">— مصنع سمنت ليلان</span></span>
+          <span class="job-period">شباط – كانون الأول 2021</span>
+        </div>
+        <ul>
+          <li>نفّذ عمليات تدقيق شاملة لإجراءات المشتريات لضمان الامتثال للأنظمة والسياسات المالية.</li>
+          <li>حلّل عقود المشتريات من الناحية المالية ومدى التزامها بحدود الموازنة.</li>
+          <li>تعاون مع فرق عمل متعددة التخصصات لتحديد فرص خفض التكاليف وتحسين كفاءة المشتريات.</li>
+          <li>نظّم وأرشف كمّاً كبيراً من سجلات الصرف والقبض القديمة المتراكمة لدى القسم.</li>
+          <li>ساهم في تسهيل مجموعة من الأوامر الإدارية التي حسّنت دقة متابعة المخزن وإجراءات الطلب والشراء.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>التعليم</h2><div class="rule"></div></div>
+      <div class="edu-item">
+        <div class="edu-top">
+          <span class="edu-degree">بكالوريوس محاسبة <span class="edu-org">— جامعة الكتاب</span></span>
+          <span class="edu-period num">2018 – 2022</span>
+        </div>
+        <p class="edu-note">كلية العلوم الإدارية والمالية، كركوك — اكتسب معرفة معمّقة بمبادئ وممارسات المحاسبة المالية، بما في ذلك إعداد القوائم المالية ومعايير التقارير.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>المهارات</h2><div class="rule"></div></div>
+      <ul class="tags">
+        <li class="tag">التدقيق المالي</li>
+        <li class="tag">الرقابة الداخلية</li>
+        <li class="tag">التحليل المالي</li>
+        <li class="tag">إدارة الموازنات</li>
+        <li class="tag">تدقيق المشتريات</li>
+        <li class="tag">الإشراف على التوثيق المحاسبي</li>
+        <li class="tag">تدريب وتأهيل الفرق</li>
+        <li class="tag">الدقة والانتباه للتفاصيل</li>
+        <li class="tag">Microsoft Excel</li>
+        <li class="tag">Microsoft Word</li>
+        <li class="tag">Microsoft PowerPoint</li>
+        <li class="tag">برنامج الأمين لإدارة المستودعات</li>
+        <li class="tag">أنظمة ERP (قيد التعلم)</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>اللغات</h2><div class="rule"></div></div>
+      <div class="lang-list">
+        <div class="lang-row"><span class="lang-name">الكردية</span><span class="lang-level">اللغة الأم</span></div>
+        <div class="lang-row"><span class="lang-name">العربية</span><span class="lang-level">إجادة تامة</span></div>
+        <div class="lang-row"><span class="lang-name">الإنجليزية</span><span class="lang-level">مستوى عملي</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>الشهادات</h2><div class="rule"></div></div>
+
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">دبلوم الدورة التدريبية الدولية في المهارات القيادية لموظفي الجامعات</p>
+          <p class="cert-date">كانون الأول 2018</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">شهادة PFA <span class="cert-org">— شركة PRD، أربيل</span></p>
+          <p class="cert-date">كانون الثاني 2023</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">شهادة CAM <span class="cert-org">— شركة PRD، أربيل</span></p>
+          <p class="cert-date">كانون الثاني 2026</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">شهادة التحليل المالي للقوائم المالية <span class="cert-org">— نقابة المحاسبين والمدققين العراقيين</span></p>
+          <p class="cert-date num">2026</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <div>
+          <p class="cert-name">شهادة المعايير الدولية لإعداد التقارير المالية (IFRS) <span class="cert-org">— نقابة المحاسبين والمدققين العراقيين</span><span class="pill-progress">قيد الإنجاز</span></p>
+          <p class="cert-date">الإكمال المتوقع خلال أيام</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:0;">
+      <div class="sec-head"><h2>مشاركة الملف</h2><div class="rule"></div></div>
+      <div class="share">
+        <div class="qr-box" id="qrBoxAr"></div>
+        <div class="share-text">
+          <p class="share-title">امسح الرمز لفتح هذا الملف من أي جهاز</p>
+          <p class="share-desc">الرابط مخصص لي شخصياً، ويحتوي دائماً على أحدث نسخة من ملفي المهني.</p>
+          <p class="share-url num" id="shareUrlAr">…</p>
+          <div class="dl-row">
+            <button class="dl-btn" id="copyBtnAr" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              نسخ الرابط
+            </button>
+          </div>
+          <p class="dl-status" id="dlStatusAr"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">تم التحديث في أيلول 2026 · محمد خالد جميل</footer>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div class="lang-en" lang="en" dir="ltr" hidden>
+    <header class="letterhead">
+      <p class="eyebrow">Professional Digital Profile</p>
+      <h1 class="name display">Mohammed Khalid Jameel</h1>
+      <p class="role">Financial Accountant</p>
+      <ul class="contact-row">
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="num">+964 751 756 2483</span>
+        </li>
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          <span class="num">goldr434@gmail.com</span>
+        </li>
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Kirkuk, Iraq</span>
+        </li>
+        <li class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/in/muhammed-khalid-962325396" target="_blank" rel="noopener">LinkedIn</a>
+        </li>
+      </ul>
+      <p class="meta-line"><b>Nationality:</b> Iraqi &nbsp;·&nbsp; <b>Driving License:</b> Private</p>
+    </header>
+
+    <section>
+      <div class="sec-head"><h2>Profile</h2><div class="rule"></div></div>
+      <p class="summary">Financial Accountant with close to six years of experience in financial auditing, internal controls, and end-to-end accounting operations. Known throughout his career for taking full ownership of whatever he is assigned — at one point running an entire accounts division single-handedly — while steadily reworking procedures, forms and records to make them faster and more reliable than the methods they replaced. Experienced in building accounting systems from the ground up for new ventures, and in training and directing new accounting and IT staff. He measures the value of his work by how well it holds up after he has moved on, not by tasks completed for a paycheck.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Experience</h2><div class="rule"></div></div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-role">Financial Accountant <span class="job-org">— KAT Company</span></span>
+          <span class="job-period num">Sep 2022 – Present</span>
+        </div>
+        <ul>
+          <li>Independently managed the full accounts division for 4–5 months, covering all responsibilities single-handedly with a very low error rate.</li>
+          <li>Recruited, trained, and mentored a newly hired junior accountant and an IT staff member, who continue to rely on ongoing guidance and support.</li>
+          <li>Partnered directly with company management to build the accounting system from scratch for a new venture (VGO Project) using the Al-Ameen Warehouse Management System, and directed accountants through to full implementation.</li>
+          <li>Concurrently managed the factory's accounts alongside project responsibilities.</li>
+          <li>Built the accounting foundation from the ground up for a second new venture (Al-Safwa Al-Khassa Project), including onboarding and directing a newly appointed accounts employee.</li>
+          <li>Redesigned internal forms, official records, and reporting templates, replacing outdated methods with faster, more efficient processes.</li>
+          <li>Developed internal controls and procedures to strengthen financial accuracy and safeguard company assets.</li>
+          <li>Oversaw the preparation and compliance of financial documentation required for regulatory audits.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <span class="job-role">Procurement Auditor <span class="job-org">— Cement Laylan</span></span>
+          <span class="job-period num">Feb – Dec 2021</span>
+        </div>
+        <ul>
+          <li>Conducted comprehensive audits of procurement processes to ensure compliance with financial regulations and policies.</li>
+          <li>Analyzed procurement contracts for financial implications and adherence to budget constraints.</li>
+          <li>Collaborated with cross-functional teams to identify cost-saving opportunities and improve procurement efficiency.</li>
+          <li>Organized and archived a large backlog of historical disbursement and receipt records for the department.</li>
+          <li>Helped streamline a set of administrative directives that improved warehouse tracking accuracy and purchase/order procedures.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Education</h2><div class="rule"></div></div>
+      <div class="edu-item">
+        <div class="edu-top">
+          <span class="edu-degree">Bachelor's Degree in Accounting <span class="edu-org">— Al-Kitab University</span></span>
+          <span class="edu-period num">2018 – 2022</span>
+        </div>
+        <p class="edu-note">College of Administrative and Financial Sciences, Kirkuk — gained in-depth knowledge of financial accounting principles and practices, including preparation of financial statements and reporting standards.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Skills</h2><div class="rule"></div></div>
+      <ul class="tags">
+        <li class="tag">Financial Auditing</li>
+        <li class="tag">Internal Controls</li>
+        <li class="tag">Financial Analysis</li>
+        <li class="tag">Budget Management</li>
+        <li class="tag">Procurement Auditing</li>
+        <li class="tag">Accounting Documentation</li>
+        <li class="tag">Team Training &amp; Mentoring</li>
+        <li class="tag">Attention to Detail</li>
+        <li class="tag">Microsoft Excel</li>
+        <li class="tag">Microsoft Word</li>
+        <li class="tag">Microsoft PowerPoint</li>
+        <li class="tag">Al-Ameen Warehouse System</li>
+        <li class="tag">ERP Systems (in training)</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Languages</h2><div class="rule"></div></div>
+      <div class="lang-list">
+        <div class="lang-row"><span class="lang-name">Kurdish</span><span class="lang-level">Native</span></div>
+        <div class="lang-row"><span class="lang-name">Arabic</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Working proficiency</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Certifications</h2><div class="rule"></div></div>
+
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">Diploma, International Training Course in Leadership Skills for University Staff</p>
+          <p class="cert-date num">Dec 2018</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">PFA Certificate <span class="cert-org">— PRD Company, Erbil</span></p>
+          <p class="cert-date num">Jan 2023</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">CAM Certificate <span class="cert-org">— PRD Company, Erbil</span></p>
+          <p class="cert-date num">Jan 2026</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <p class="cert-name">Financial Statement Analysis Certificate <span class="cert-org">— Syndicate of Accountants and Auditors</span></p>
+          <p class="cert-date num">2026</p>
+        </div>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <div>
+          <p class="cert-name">IFRS Certificate <span class="cert-org">— Syndicate of Accountants and Auditors</span><span class="pill-progress">In progress</span></p>
+          <p class="cert-date num">Expected within days</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:0;">
+      <div class="sec-head"><h2>Share this profile</h2><div class="rule"></div></div>
+      <div class="share">
+        <div class="qr-box" id="qrBoxEn"></div>
+        <div class="share-text">
+          <p class="share-title">Scan to open this profile on any device</p>
+          <p class="share-desc">This link is mine alone, and always points to the latest version of my profile.</p>
+          <p class="share-url num" id="shareUrlEn">…</p>
+          <div class="dl-row">
+            <button class="dl-btn" id="copyBtnEn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy link
+            </button>
+          </div>
+          <p class="dl-status" id="dlStatusEn"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">Last updated September 2026 · Mohammed Khalid Jameel</footer>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script>
+(function(){
+  var body = document.body;
+  var btnAr = document.getElementById('btn-ar');
+  var btnEn = document.getElementById('btn-en');
+  var blockAr = document.querySelector('.lang-ar');
+  var blockEn = document.querySelector('.lang-en');
+
+  function setLang(lang){
+    body.setAttribute('data-active', lang);
+    blockAr.hidden = (lang !== 'ar');
+    blockEn.hidden = (lang !== 'en');
+    btnAr.setAttribute('aria-pressed', String(lang === 'ar'));
+    btnEn.setAttribute('aria-pressed', String(lang === 'en'));
+    try { localStorage.setItem('cv-lang', lang); } catch(e){}
+  }
+
+  var initial = 'ar';
+  try {
+    var saved = localStorage.getItem('cv-lang');
+    if (saved === 'ar' || saved === 'en') initial = saved;
+  } catch(e){}
+  setLang(initial);
+
+  btnAr.addEventListener('click', function(){ setLang('ar'); });
+  btnEn.addEventListener('click', function(){ setLang('en'); });
+
+  var pageUrl = window.location.href;
+  var urlAr = document.getElementById('shareUrlAr');
+  var urlEn = document.getElementById('shareUrlEn');
+  if (urlAr) urlAr.textContent = pageUrl.replace(/^https?:\/\//, '');
+  if (urlEn) urlEn.textContent = pageUrl.replace(/^https?:\/\//, '');
+
+  function renderQR(boxId){
+    var box = document.getElementById(boxId);
+    if (!box || typeof QRCode === 'undefined') return;
+    QRCode.toCanvas(pageUrl, { width: 132, margin: 1, color: { dark: '#16212B', light: '#FFFFFF' } }, function(err, canvas){
+      if (err) return;
+      box.appendChild(canvas);
+    });
+  }
+  renderQR('qrBoxAr');
+  renderQR('qrBoxEn');
+
+  function wireCopy(btnId, statusId){
+    var btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var statusEl = document.getElementById(statusId);
+      var isAr = body.getAttribute('data-active') === 'ar';
+      function done(ok){
+        if (statusEl) statusEl.textContent = ok ? (isAr ? 'تم نسخ الرابط.' : 'Link copied.') : (isAr ? 'تعذر النسخ.' : 'Could not copy.');
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(pageUrl).then(function(){ done(true); }, function(){ done(false); });
+      } else {
+        try{
+          var ta = document.createElement('textarea');
+          ta.value = pageUrl;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          done(true);
+        } catch(e){ done(false); }
+      }
+    });
+  }
+  wireCopy('copyBtnAr', 'dlStatusAr');
+  wireCopy('copyBtnEn', 'dlStatusEn');
+})();
+</script>
+
+</body>
+</html>
