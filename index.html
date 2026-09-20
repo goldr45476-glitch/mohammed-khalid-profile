@@ -352,6 +352,28 @@
     padding:3px 8px;
     margin-inline-start:8px;
   }
+  .cert-body{ flex:1; min-width:0; }
+  .cert-thumb{
+    flex:none;
+    width:56px;height:56px;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    display:block;
+    box-shadow:0 1px 2px rgba(22,33,43,0.08);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .cert-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .cert-thumb:hover{ transform:scale(1.06); box-shadow:var(--shadow); }
+  .doc-link{
+    display:inline-block;
+    margin-top:6px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--accent-strong);
+    text-decoration:none;
+  }
+  .doc-link:hover{ text-decoration:underline; }
 
   .share{
     background:var(--paper-raised);
@@ -528,6 +550,7 @@
           <span class="edu-period num">2018 – 2022</span>
         </div>
         <p class="edu-note">كلية العلوم الإدارية والمالية، كركوك — اكتسبتُ معرفة معمّقة بمبادئ وممارسات المحاسبة المالية، بما في ذلك إعداد القوائم المالية ومعايير التقارير.</p>
+        <a class="doc-link" href="certs/degree-confirmation.jpg" target="_blank" rel="noopener">عرض وثيقة التخرج الرسمية ↗</a>
       </div>
     </section>
 
@@ -571,24 +594,43 @@
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <div>
+        <div class="cert-body">
           <p class="cert-name">شهادة PFA <span class="cert-org">— شركة PRD، أربيل</span></p>
           <p class="cert-date">كانون الثاني 2023</p>
         </div>
+        <a class="cert-thumb" href="certs/cert-pfa.jpg" target="_blank" rel="noopener" aria-label="عرض شهادة PFA">
+          <img src="certs/cert-pfa.jpg" alt="شهادة PFA" loading="lazy">
+        </a>
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <div>
+        <div class="cert-body">
           <p class="cert-name">شهادة CAM <span class="cert-org">— شركة PRD، أربيل</span></p>
           <p class="cert-date">كانون الثاني 2026</p>
         </div>
+        <a class="cert-thumb" href="certs/cert-cam.jpg" target="_blank" rel="noopener" aria-label="عرض شهادة CAM">
+          <img src="certs/cert-cam.jpg" alt="شهادة CAM" loading="lazy">
+        </a>
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <div>
+        <div class="cert-body">
           <p class="cert-name">شهادة التحليل المالي للقوائم المالية <span class="cert-org">— نقابة المحاسبين والمدققين العراقيين</span></p>
           <p class="cert-date num">2026</p>
         </div>
+        <a class="cert-thumb" href="certs/cert-financial-analysis.jpg" target="_blank" rel="noopener" aria-label="عرض شهادة التحليل المالي">
+          <img src="certs/cert-financial-analysis.jpg" alt="شهادة التحليل المالي" loading="lazy">
+        </a>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div class="cert-body">
+          <p class="cert-name">شهادة تقدير — المرتبة الثانية في دورة التحليل المالي <span class="cert-org">— نقابة المحاسبين والمدققين العراقيين، فرع كركوك</span></p>
+          <p class="cert-date num">2026</p>
+        </div>
+        <a class="cert-thumb" href="certs/cert-appreciation.jpg" target="_blank" rel="noopener" aria-label="عرض شهادة التقدير">
+          <img src="certs/cert-appreciation.jpg" alt="شهادة تقدير" loading="lazy">
+        </a>
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
@@ -700,6 +742,7 @@
           <span class="edu-period num">2018 – 2022</span>
         </div>
         <p class="edu-note">College of Administrative and Financial Sciences, Kirkuk — gained in-depth knowledge of financial accounting principles and practices, including preparation of financial statements and reporting standards.</p>
+        <a class="doc-link" href="certs/degree-confirmation.jpg" target="_blank" rel="noopener">View official graduation document ↗</a>
       </div>
     </section>
 
@@ -743,24 +786,43 @@
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <div>
+        <div class="cert-body">
           <p class="cert-name">PFA Certificate <span class="cert-org">— PRD Company, Erbil</span></p>
           <p class="cert-date num">Jan 2023</p>
         </div>
+        <a class="cert-thumb" href="certs/cert-pfa.jpg" target="_blank" rel="noopener" aria-label="View PFA Certificate">
+          <img src="certs/cert-pfa.jpg" alt="PFA Certificate" loading="lazy">
+        </a>
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <div>
+        <div class="cert-body">
           <p class="cert-name">CAM Certificate <span class="cert-org">— PRD Company, Erbil</span></p>
           <p class="cert-date num">Jan 2026</p>
         </div>
+        <a class="cert-thumb" href="certs/cert-cam.jpg" target="_blank" rel="noopener" aria-label="View CAM Certificate">
+          <img src="certs/cert-cam.jpg" alt="CAM Certificate" loading="lazy">
+        </a>
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <div>
+        <div class="cert-body">
           <p class="cert-name">Financial Statement Analysis Certificate <span class="cert-org">— Syndicate of Accountants and Auditors</span></p>
           <p class="cert-date num">2026</p>
         </div>
+        <a class="cert-thumb" href="certs/cert-financial-analysis.jpg" target="_blank" rel="noopener" aria-label="View Financial Statement Analysis Certificate">
+          <img src="certs/cert-financial-analysis.jpg" alt="Financial Statement Analysis Certificate" loading="lazy">
+        </a>
+      </div>
+      <div class="cert">
+        <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div class="cert-body">
+          <p class="cert-name">Certificate of Appreciation — 2nd Place, Financial Analysis Course <span class="cert-org">— Syndicate of Accountants and Auditors, Kirkuk Branch</span></p>
+          <p class="cert-date num">2026</p>
+        </div>
+        <a class="cert-thumb" href="certs/cert-appreciation.jpg" target="_blank" rel="noopener" aria-label="View Certificate of Appreciation">
+          <img src="certs/cert-appreciation.jpg" alt="Certificate of Appreciation" loading="lazy">
+        </a>
       </div>
       <div class="cert">
         <span class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
