@@ -941,5 +941,55 @@
 })();
 </script>
 
+
+<style id="cert-lightbox-style">
+.cert-lightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:99999;cursor:zoom-out;padding:24px;}
+.cert-lightbox-overlay.open{display:flex;}
+.cert-lightbox-overlay img{max-width:95vw;max-height:95vh;border-radius:10px;box-shadow:0 10px 50px rgba(0,0,0,0.6);cursor:default;}
+.cert-lightbox-close{position:fixed;top:16px;insetInlineEnd:20px;color:#fff;font-size:32px;line-height:1;background:rgba(255,255,255,0.12);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+</style>
+<div id="cert-lightbox-overlay" class="cert-lightbox-overlay" role="dialog" aria-modal="true" aria-label="Certificate preview">
+  <span class="cert-lightbox-close" id="cert-lightbox-close" aria-hidden="true">&times;</span>
+  <img id="cert-lightbox-img" src="" alt="Certificate">
+</div>
+<script id="cert-lightbox-script">
+(function(){
+  function init(){
+    var overlay = document.getElementById('cert-lightbox-overlay');
+    var img = document.getElementById('cert-lightbox-img');
+    var closeBtn = document.getElementById('cert-lightbox-close');
+    if(!overlay || !img) return;
+    function openLightbox(href){
+      img.src = href;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(){
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      img.src = '';
+    }
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('.cert-thumb');
+      if(a){
+        e.preventDefault();
+        var href = a.getAttribute('href');
+        if(href) openLightbox(href);
+        return;
+      }
+      if(e.target === overlay){ closeLightbox(); }
+    });
+    if(closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
 </body>
 </html>
